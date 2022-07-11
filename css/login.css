@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Spoqa Han Sans', sans-serif;
+  letter-spacing: -.03em;
+  color: #212529;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+section {
+  width: 500px;
+  height: 2000px;
+  background-color: #fff;
+}
+
+h1 {
+  width: 400px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.5;
+  margin-bottom: 3em;
+  color: #101010;
+  letter-spacing: -.05em;
+}
+
+h2 {
+  width: 400px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  color: #101010;
+  letter-spacing: -.05em;
+}
+
+label {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+input {
+  display: block;
+  width: 400px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 7px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  border: 1px solid #d3dce6;
+  transition: border-color 200ms ease-in-out;
+}
+
+input:focus,
+input:hover,
+input:active {
+  outline: none;
+  box-shadow: none;
+  border-color: #1fb6ff;
+}
+
+a {
+    display: inline-block;
+    padding: 5px 72px;
+    color: #212529;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #d3dce6;
+    border-radius: 7px;
+}
+
+.login_button {
+    margin-right: 5px;
+}
