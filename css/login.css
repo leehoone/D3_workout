@@ -6,7 +6,6 @@
 
 html {
   font-size: 16px;
-  font-family: 'Spoqa Han Sans', sans-serif;
   letter-spacing: -.03em;
   color: #212529;
 }
@@ -19,18 +18,24 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
+  text-align: center;
+  background-color: #f1f3f6;
 }
 
-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+header {
+  height: 200px;
 }
+
+/*.log_img {*/
+/*  background-image: url("../assets/belly-g5dad91a63_1920.jpg");*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*}*/
 
 section {
-  width: 500px;
-  height: 2000px;
+  width: 400px;
   background-color: #fff;
+  margin: 20px auto auto;
 }
 
 h1 {
@@ -48,7 +53,7 @@ h2 {
   font-weight: 400;
   font-size: 32px;
   line-height: 1.5;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
   color: #101010;
   letter-spacing: -.05em;
 }
@@ -60,36 +65,68 @@ label {
   line-height: 16px;
 }
 
-input {
+.user_id input {
   display: block;
   width: 400px;
   height: 44px;
   padding: 0 12px;
   border-radius: 7px;
-  margin-bottom: 12px;
   font-size: 16px;
   border: 1px solid #d3dce6;
   transition: border-color 200ms ease-in-out;
+  margin-bottom: 10px;
 }
 
-input:focus,
-input:hover,
-input:active {
+.user_id input:focus,
+.user_id input:hover,
+.user_id input:active {
   outline: none;
   box-shadow: none;
   border-color: #1fb6ff;
 }
 
-a {
-    display: inline-block;
-    padding: 5px 72px;
-    color: #212529;
-    font-size: 16px;
-    text-decoration: none;
-    border: 1px solid #d3dce6;
-    border-radius: 7px;
+.user_password input {
+  display: block;
+  width: 400px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 7px;
+  font-size: 16px;
+  border: 1px solid #d3dce6;
+  transition: border-color 200ms ease-in-out;
+  margin-bottom: 10px;
+}
+
+.user_password input:focus,
+.user_password input:hover,
+.user_password input:active {
+  outline: none;
+  box-shadow: none;
+  border-color: #1fb6ff;
+}
+
+.button input {
+  display: block;
+  width: 400px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 7px;
+  font-size: 16px;
+  border: 1px solid #d3dce6;
+  margin-bottom: 10px;
+  background-color: #609ae9;
+  color: #fff;
 }
 
 .login_button {
-    margin-right: 5px;
+  margin-top: 30px;
+}
+
+.button input:focus,
+.button input:hover,
+.button input:active {
+  outline: none;
+  box-shadow: none;
+  /*border-color: #1fb6ff;*/
+  background-color: #3e85e4;
 }
