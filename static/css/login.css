@@ -19,50 +19,43 @@ body {
   align-items: center;
   align-content: center;
   text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") ;
+  background-size: cover;
+  background-position: center;
   background-color: #f1f3f6;
 }
 
 header {
-  height: 200px;
-}
-
-/*.log_img {*/
-/*  background-image: url("../assets/belly-g5dad91a63_1920.jpg");*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*}*/
-
-section {
-  width: 400px;
-  background-color: #fff;
-  margin: 20px auto auto;
+  height: 100px;
 }
 
 h1 {
   width: 400px;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 100px;
   line-height: 1.5;
-  margin-bottom: 3em;
-  color: #101010;
+  /*margin-bottom: 3em;*/
+  color: #ffffff;
   letter-spacing: -.05em;
+  text-shadow:1px 1px 1px #000;
+}
+
+section {
+  background-color: #fff;
+  margin: 20px auto auto;
+  box-shadow: 0 0 5px gray;
+  padding: 50px;
+  border-radius: 7px;
 }
 
 h2 {
-  width: 400px;
+  /*width: 400px;*/
   font-weight: 400;
   font-size: 32px;
   line-height: 1.5;
   margin-bottom: 3em;
   color: #101010;
   letter-spacing: -.05em;
-}
-
-label {
-  display: block;
-  width: 100%;
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .user_id input {
