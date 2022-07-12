@@ -22,8 +22,6 @@
 
             text-align: center;
 
-            box-shadow: 0px 0px 5px gray;
-
             padding: 20px;
         }
         .mytitle {
@@ -42,23 +40,10 @@
                 return true;
             }else {
                 alert("비밀번호가 일치합니다.")
+                window.location.href="/"
                 return true;
             }
         }
-
-        function id_overlap_check() {
-
-          $('.username_input').change(function () {
-            $('#id_check_sucess').hide();
-            $('.id_overlap_button').show();
-            $('.username_input').attr("check_result", "fail");
-          })
-          if ($('.username_input').val() == '') {
-            alert('이메일을 입력해주세요.')
-            return;
-          }
-        }
-
 
     </script>
 </head>
@@ -71,11 +56,9 @@
 
         <div class="myidpw">
             <p><input type="text" placeholder="이름"></p>
-            <p><input type="text"></p>
 
-          <p><input type="text" class="username_input" name="username" check_result="fail" required/>
-            <button type="button" class="id_overlap_button" onclick="id_overlap_check()">중복검사</button>
-            <img id="id_check_sucess" style="display: none;"></p>
+            <p><input type="text" id="id" placeholder="아이디"><input onclick="check_id()" type="button" name="id" value="중복확인"></p>
+
 
             <p><input type="password" id="password1" placeholder="비밀번호"></p>
             <p><input type="password" id="password2" placeholder="비밀번호확인"></p>
