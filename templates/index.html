@@ -2,146 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Webpage Title -->
+    <title>Home | Workout log</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
-    <title>Workout log - 나만의 운동일지</title>
-
-    <link rel="stylesheet" href="../static/css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-
-    <script>
-        $(document).ready(function () {
-            listing();
-        });
-
-        function listing() {
-            $.ajax({
-                type: 'GET',
-                url: '/D3_workout',
-                data: {},
-                success: function (response) {
-                    let rows = response['D3_workout']
-                    for (let i =0; i < rows.length; i++) {
-                        let title = rows[i]['title']
-                        let comment = rows[i]['comment']
-
-                        let temp_html = `<div class="col">
-                                            <div class="card h-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">오늘의 일지</h5>
-                                                    <p class="card-text">오늘은 러닝머신을 1시간 타고, 웨이트 트레이닝 위주로 운동함</p>
-                                                    <a href="#" class="btn btn-dark">수정</a>
-                                                    <a href="#" class="btn btn-outline-dark">삭제</a>
-                                                </div>
-                                            </div>
-                                        </div>`
-
-                        $('#cards-box').append(temp_html)
-                    }
-                }
-            })
-        }
-
-        function posting() {
-            let url = $('#url').val()
-            let star = $('#star').val()
-            let comment = $('#comment').val()
-
-            $.ajax({
-                type: 'POST',
-                url: '/movie',
-                data: {url_give:url, star_give:star, comment_give:comment},
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                }
-            });
-        }
-        function open_box() {
-            $('#post-box').show()
-        }
-
-        function close_box() {
-            $('#post-box').hide()
-        }
-    </script>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- Font Awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Hi+Melody&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='sign_up.css') }}" rel="stylesheet">
 </head>
-
 <body>
-    <div class="mytitle">
-        <h1>Workout log</h1>
-        <button onclick="open_box()">글쓰기<i class="xi-caret-down"></i></button>
-    </div>
-    <div class="mypost" id="post-box">
-        <p>오늘의 날짜 : <input type="date" name="today"></p>
-        <div class="form-floating mb-3">
-            <input id="title" type="email" class="form-control" placeholder="Title">
-            <label>제목</label>
-        </div>
-        <div class="form-floating">
-            <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
-            <label>내용</label>
-        </div>
-        <div class="mybtns">
-            <button onclick="posting()" type="button" class="btn btn-dark">만들기</button>
-            <button onclick="close_box()" type="button" class="btn btn-outline-dark">닫기</button>
-        </div>
-    </div>
-    <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="cards-box">
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">오늘의 일지</h5>
-                        <p class="card-text">오늘은 러닝머신을 1시간 타고, 웨이트 트레이닝 위주로 운동함</p>
-                        <a href="#" class="btn btn-dark">수정</a>
-                        <a href="#" class="btn btn-outline-dark">삭제</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">오늘의 일지</h5>
-                        <p class="card-text">오늘은 러닝머신을 1시간 타고, 웨이트 트레이닝 위주로 운동함</p>
-                        <a href="#" class="btn btn-dark">수정</a>
-                        <a href="#" class="btn btn-outline-dark">삭제</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">오늘의 일지</h5>
-                        <p class="card-text">오늘은 러닝머신을 1시간 타고, 웨이트 트레이닝 위주로 운동함</p>
-                        <a href="#" class="btn btn-dark">수정</a>
-                        <a href="#" class="btn btn-outline-dark">삭제</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">오늘의 일지</h5>
-                        <p class="card-text">오늘은 러닝머신을 1시간 타고, 웨이트 트레이닝 위주로 운동함</p>
-                        <a href="#" class="btn btn-dark">수정</a>
-                        <a href="#" class="btn btn-outline-dark">삭제</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <h1>로그인완료!</h1>
 </body>
-
 </html>
